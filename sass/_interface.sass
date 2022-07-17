@@ -1,0 +1,125 @@
+.container
+  width: 1080px
+  margin: auto
+@media (max-width: 1129px)
+  .container
+    width: 980px
+    margin: auto
+@media (max-width: 991px)
+  .container
+    width: 740px
+    margin: auto
+@media (max-width: 767px)
+  .container
+    width: 550px
+    margin: auto
+@media (max-width: 575px)
+  .container
+    width: 100%
+    padding-left: 19px
+    padding-right: 19px
+    margin: auto
+.header
+  &__wrap
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 54px 0
+  &__right
+    display: flex
+    grid-gap: 40px
+    align-items: center
+    justify-content: space-between
+  &__menu
+    display: flex
+    grid-gap: 23px
+    a
+      font-size: 14px
+      color: #000
+      text-decoration: none
+      position: relative
+      padding: 10px 0
+      &::after
+        content: ""
+        display: block
+        width: 0%
+        height: 2px
+        position: absolute
+        bottom: 0
+        left: 50%
+        background-color: rgba(41, 140, 255, 1)
+        transition: all 0.3s
+      &:hover::after
+        left: 0
+        width: 100%
+  &__btn
+    font-size: 14px
+    width: 190px
+    height: 47px
+    display: flex
+    justify-content: center
+    align-items: center
+    color: #EFEFEF
+    text-decoration: none
+    border-radius: 5px
+    position: relative
+    background: linear-gradient(left, #3399ff, #2e39ff)
+    span
+      position: relative
+      z-index: 1
+    &::after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      border-radius: 5px
+      display: block
+      background: linear-gradient(left, #2e39ff, #3399ff)
+      opacity: 0
+      transition: all 0.3s
+    &:hover
+      &::after
+        opacity: 1
+.main
+  color: #1C1C1B
+  &__soc
+    a
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 49px
+      height: 41px
+      margin-bottom: 9px
+      background: url('../img/main-soc.png') center no-repeat
+      svg
+        max-width: 21px
+      &:hover
+        opacity: 0.8
+  &__top
+    margin-bottom: 44px
+    text-transform: uppercase
+    font-size: 18px
+  &__title
+    margin: 0
+    margin-bottom: 50px
+    max-width: 555px
+    font-size: 50px
+    line-height: 54px
+  &__date
+    display: flex
+    align-items: flex-start
+    color: #1C1C1B
+    font-size: 18px
+  &__btn
+
+  &__bottom
+    font-size: 17px
+    line-height: 23px
+    text-transform: uppercase
+    max-width: 430px
+    span
+      display: block
+      margin-bottom: 23px
+      font-weight: 700

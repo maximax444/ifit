@@ -1,0 +1,77 @@
+.who
+    padding-bottom: 120px
+    color: #1C1C1B
+    &__title
+        margin: 0
+        margin-bottom: 75px
+        font-size: 50px
+        line-height: 54px
+        span
+            color: #0080EA
+    &__wrap
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: 36px
+    &__block
+        background-color: rgba(229, 230, 254, 1)
+        border-radius: 10px
+        padding: 65px 43px
+        position: relative
+        padding-left: 124px
+        margin-left: 90px
+        font-size: 17px
+    &__img
+        position: absolute
+        left: -90px
+        top: 0
+        height: 100%
+        width: 180px
+        display: flex
+        justify-content: center
+        align-items: center
+.titles
+    position: relative
+    padding-top: 106px
+    padding-bottom: 86px
+    &::after
+        content: ""
+        width: calc(100% - 115px)
+        position: absolute
+        top: 0
+        right: 0
+        display: block
+        border-radius: 30px 0 0 30px
+        height: 100%
+        background: linear-gradient(left, #505fec, #0080ea)
+
+    &__all
+        position: relative
+        z-index: 1
+    &__title
+        font-size: 50px
+        line-height: 54px
+        font-weight: 400
+        margin: 0
+        margin-bottom: 55px
+        color: #fff
+        span
+            font-weight: 700
+            color: #b2e2ff
+    &__wrap
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+    &__img
+        width: 32px
+        height: 32px
+        margin-right: 36px
+        display: flex
+        justify-content: center
+        align-items: center
+        svg
+            max-width: 100%
+            max-height: 100%
+    &__block
+        display: flex
+        align-items: center
+    &__text
+        max-width: calc(100% - 68px)
