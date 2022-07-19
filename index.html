@@ -32,7 +32,7 @@
                         </g>
                     </svg>
                 </a>
-                <a href="" class="header__btn"><span>Перезвоните мне</span></a>
+                <a href="" class="header__btn modal-call"><span>Перезвоните мне</span></a>
                 <div class="header__menu">
                     <a href="#who">Для кого вебинар?</a>
                     <a href="#titles">Темы</a>
@@ -90,7 +90,7 @@
             </div>
             <div class="container">
                 <div class="header__wrap">
-                    <a href="" class="header__logo">
+                    <a href="#" class="header__logo">
                         <img src="img/logo.png" alt="">
                     </a>
                     <div class="header__right">
@@ -100,7 +100,7 @@
                             <a href="#features">Преимущества</a>
                             <a href="#about">Об авторе</a>
                         </div>
-                        <a href="" class="header__btn"><span>Перезвоните мне</span></a>
+                        <a href="" class="header__btn modal-call"><span>Перезвоните мне</span></a>
                     </div>
                     <a href="" class="header__burger">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 286.07 214.61">
@@ -182,7 +182,8 @@
                         <div class="after"></div>
                         <img src="img/autor.png" alt="">
                     </div>
-                    <a href="" class="main__btn wow animate__animated animate__fadeInLeft"><span>записаться <br>
+                    <a href="" class="modal-call main__btn wow animate__animated animate__fadeInLeft"><span>записаться
+                            <br>
                             на бесплатный вебинар</span></a>
                     <div class="main__bottom wow animate__animated animate__fadeInUp"><span>Вы узнаете</span>
 
@@ -379,7 +380,7 @@
                     <span>Вебинар абсолютно бесплатный!</span>
                     Не упустите свой шанс обрести финансовую свободу
                 </div>
-                <a href="" class="free__btn"><span>записаться</span>
+                <a href="" class="free__btn modal-call"><span>записаться</span>
                 </a>
             </div>
         </div>
@@ -644,7 +645,7 @@
         <div class="bottom__all">
 
             <div class="container">
-                <a href="" class="bottom__btn wow animate__animated animate__fadeInUp"><span>записаться <br>
+                <a href="" class="modal-call bottom__btn wow animate__animated animate__fadeInUp"><span>записаться <br>
                         на бесплатный вебинар</span></a>
                 <div class="bottom__title wow animate__animated animate__fadeInUp">Во время вебинара <span>вы также
                         получите:</span></div>
@@ -665,7 +666,7 @@
                 </div>
                 <footer class="footer">
                     <div class="footer__main">
-                        <a href="" class="footer__logo">
+                        <a href="#" class="footer__logo">
                             <img src="img/logo.png" alt="">
                         </a>
                         <p class="footer__text">ИФИТ — это независимое образовательное сообщество
@@ -733,10 +734,87 @@
 
         </div>
     </div>
+    <div class="overlay overlay-call">
+        <div class="popup-wrap">
+            <div class="popup-call animate__animated animate__backInUp">
+                <div class="popup-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 213.98 214.13">
+                        <title>close</title>
+                        <g id="Слой_2" data-name="Слой 2">
+                            <g id="Слой_1-2" data-name="Слой 1">
+                                <path fill="#fff"
+                                    d="M81.9,106.56a13.45,13.45,0,0,1-2.06-1.42Q43.18,68.47,6.55,31.77C-2.22,23-.58,9.61,10,3.27c6.61-4,15.65-2.71,21.36,3Q68.21,43,105,79.86c.58.58,1.08,1.26,2.2,2.59A15,15,0,0,1,108.8,80Q145.66,43,182.55,6.15c5-5,10.87-7.36,17.84-5.54,13.75,3.58,18,19.66,8.16,30.13-1.48,1.57-3,3.06-4.58,4.59q-86.19,86.2-172.38,172.41c-5.6,5.61-12,7.84-19.77,5.28C.55,209.3-3.76,194.56,3.75,185.39c1-1.18,2-2.33,3.08-3.41q36.49-36.55,73-73.07a13.66,13.66,0,0,1,2.06-1.42Z" />
+                                <path fill="#fff"
+                                    d="M142.39,124.58a20,20,0,0,1,13.36,6.08Q182,156.87,208.2,183.14c8.29,8.35,7.55,20.3-1.49,27.4-6.84,5.37-16.73,4.73-23.42-1.91q-26.65-26.41-53.06-53.07c-9.13-9.25-6.59-23.42,5-28.94C137.44,125.56,140,125.24,142.39,124.58Z" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="popup__block active">
+                    <div class="popup__title">ЗАРЕГИСТРИРОВАТЬСЯ НА&#160;ВЕБИНАР</div>
+                    <form class="step1">
+                        <input type="text" name="name" required placeholder="Имя">
+                        <div class="popup__tel">
+                            <select name="" id="country">
+                                <option value="ru">(РФ) +7</option>
+                                <option value="ua">(UA) +380</option>
+                                <option value="by">(BY) +375</option>
+                            </select>
+                            <input type="tel" name="tel" id="phone" required placeholder=". . .   . . .  . . - . .">
+                        </div>
+
+                        <input type="email" name="email" required placeholder="E-mail">
+
+                        <label class="check">
+                            <input type="checkbox" class="checkbox" name="" id="" checked required>
+                            <span></span>
+                            <p>
+                                Нажимая на кнопку «Записаться», Вы соглашаетесь
+                                с <a href="">политикой конфиденциальности</a>
+                            </p>
+                        </label>
+                        <button class="btn btn--full">Записаться</button>
+                    </form>
+                </div>
+                <div class="popup__block ">
+                    <div class="popup__title">Пожалуйста,
+                        выберите удобный мессенджер,
+                        где Вас можно уведомить
+                        о начале вебинара:</div>
+                    <form class="step2">
+                        <div class="hidden">
+                            <input type="hidden" name="name">
+                            <input type="hidden" name="tel">
+                            <input type="hidden" name="email">
+                        </div>
+                        <label class="radio tg">
+                            <input type="radio" name="mess" value="Telegram">
+                            <span>Telegram</span>
+                        </label>
+                        <label class="radio vk">
+                            <input type="radio" name="mess" value="VK">
+                            <span>VK</span>
+                        </label>
+                        <div class="popup__small">
+                            Обещаем уважать ваше внимание
+                            и&#160;не&#160;заваливать мессенджер спамом
+                        </div>
+
+                    </form>
+                </div>
+                <div class="popup__block">
+                    <div class="popup__title">Спасибо за заявку, Ваша запись будет подтверждена в ближайшее время!</div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js">
     </script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script>
         new WOW({
             mobile: false,

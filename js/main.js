@@ -39,3 +39,66 @@ $('.header__close, .header__menu a').on('click', function (e) {
     e.preventDefault();
     $('.header__drop').removeClass('active');
 });
+$('.modal-call').on('click', function (e) {
+    e.preventDefault();
+    $('.overlay-call').addClass('overlay-active');
+    $('body').css("overflow", "hidden");
+});
+$('.popup-close').on('click', function (e) {
+    $('body').css("overflow", "visible");
+    $(this).closest('.overlay').removeClass('overlay-active');
+});
+$('.overlay-call').on('click', function (e) {
+    if (!(($(e.target).parents('.popup-wrap').length) || ($(e.target).hasClass('popup-wrap')))) {
+        $('body').css("overflow", "visible");
+        $('.overlay-call').removeClass('overlay-active');
+    }
+});
+
+function changeActive() {
+    var activeBl = $('.popup__block.active');
+    activeBl.next().addClass('active');
+    activeBl.removeClass('active');
+}
+$("form.step1").submit(function (r) {
+    r.preventDefault();
+    $("form.step2").find('input[name="name"]').val($("form.step1").find('input[name="name"]').val());
+    $("form.step2").find('input[name="tel"]').val($("form.step1").find('input[name="tel"]').val());
+    $("form.step2").find('input[name="email"]').val($("form.step1").find('input[name="email"]').val());
+    changeActive();
+});
+$("form.step2 input[type='radio']").on('change', function () {
+    $("form.step2").submit();
+});
+$("form.step2").submit(function (r) {
+    return r.preventDefault(),
+        $.ajax({
+            type: "POST",
+            url: "/mail/mail.php",
+            data: $(this).serialize()
+        }).done(function () {
+            $(this).find("input").val(""),
+                $("form.step1").find("input").val(""),
+                changeActive(),
+                $("form").trigger("reset")
+        })
+});
+
+function maskPhone() {
+    var country = $('#country option:selected').val();
+    switch (country) {
+        case "ru":
+            $("#phone").mask("+7(999) 999-99-99");
+            break;
+        case "ua":
+            $("#phone").mask("+380(999) 999-99-99");
+            break;
+        case "by":
+            $("#phone").mask("+375(999) 999-99-99");
+            break;
+    }
+}
+maskPhone();
+$('#country').change(function () {
+    maskPhone();
+});

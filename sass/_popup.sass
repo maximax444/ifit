@@ -1,0 +1,228 @@
+.overlay
+    position: fixed
+    overflow-y: scroll
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background-color: rgba(#0080ea, 0.95)
+    z-index: 30
+    display: none
+    &-active
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 40px 0
+    &-brand
+        align-items: flex-start
+.popup-wrap
+    max-width: 95%
+.popup
+    &-close
+        margin: 0 auto
+        margin-bottom: 50px
+        transition: all 0.3s
+        width: 28px
+        height: 28px
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        top: -68px
+        left: 50%
+        margin-left: -14px
+        &:hover
+            cursor: pointer
+            transform: rotate(90deg)
+    &-call
+        width: 370px
+        max-width: 100%
+        border-radius: 10px
+        background-color: #fff
+        padding: 40px 30px
+        padding-top: 50px
+        form
+            .popup__tel
+                position: relative
+                &::before
+                    content: ""
+                    display: block
+                    width: 6px
+                    height: 9px
+                    background: url('../img/bottom.png') center no-repeat
+                    position: absolute
+                    top: 19px
+                    left: 12px
+                    z-index: 3
+                    pointer-events: none
+                &> input
+                    width: 100%
+                    border: 0
+                    height: 46px
+                    text-align: center
+                    font-size: 17px
+                    border-radius: 10px
+                    background-color: #f0f0f0
+                    margin-bottom: 18px
+                    padding-left: 125px
+                    text-align: left
+                #country
+                    border: 0
+                    position: absolute
+                    top: 0
+                    text-align: center
+                    appearance: none
+                    left: 0
+                    height: 46px
+                    background-color: #d3ebff
+                    min-width: 105px
+                    max-width: 120px
+                    border-radius: 10px 0 0 10px
+                    font-size: 17px
+                    padding-left: 20px
+                    padding-right: 10px
+                    &:focus
+                        outline: none
+            &>input
+                width: 100%
+                border: 0
+                height: 46px
+                text-align: center
+                font-size: 17px
+                border-radius: 10px
+                background-color: #f0f0f0
+                margin-bottom: 18px
+            button
+                display: flex
+                justify-content: center
+                align-items: center
+                text-align: center
+                width: 100%
+                border: 0
+                transition: all 0.3s
+                cursor: pointer
+                height: 78px
+                background: linear-gradient(top, #298cff, #2e39ff)
+                border-radius: 14px
+                box-shadow: 0px
+                font-size: 18px
+                text-transform: uppercase
+                font-weight: 700
+                overflow: hidden
+                color: #fff
+                text-decoration: none
+                position: relative
+                span
+                    position: relative
+                    z-index: 3
+                &::after
+                    content: ""
+                    width: 200px
+                    height: 200px
+                    position: absolute
+                    bottom: -160px
+                    left: 50%
+                    margin-left: -100px
+                    border-radius: 50%
+                    background-color: #4bc9e9
+                    filter: blur(30px)
+                    z-index: 2
+                    opacity: 0
+                    transition: all 0.3s
+                &:hover
+                    box-shadow: 0px 5px 17.43px 3.57px rgba(0, 128, 234, 1)
+                    &::after
+                        opacity: 1
+    &__block
+        display: none
+        &.active
+            display: block
+    &__title
+        font-size: 17px
+        text-align: center
+        font-weight: 700
+        margin-bottom: 44px
+    &__small
+        font-size: 13px
+        text-align: center
+        margin-top: 30px
+.check
+    display: flex
+    align-items: flex-start
+    position: relative
+    padding-left: 20px
+    margin-top: 5px
+    margin-bottom: 40px
+    span
+        width: 18px
+        height: 18px
+        border-radius: 5px
+        background-color: #f0f0f0
+        margin-right: 12px
+        position: relative
+    input
+        width: 0
+        height: 0
+        overflow: hidden
+        opacity: 0
+        visibility: hidden
+        margin: 0
+        padding: 0
+        position: absolute
+        top: 0
+        left: 0
+        &:checked + span
+            &::after
+                content: ""
+                display: block
+                width: 8px
+                height: 8px
+                border-radius: 4px
+                background-color: #000
+                position: absolute
+                top: 5px
+                left: 5px
+    p
+        max-width: calc(100% - 30px)
+        margin: 0
+        font-size: 13px
+        a
+            color: #000
+.radio
+    position: relative
+    margin-bottom: 20px
+    display: block
+    cursor: pointer
+    span
+        width: 100%
+        height: 46px
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 17px
+        color: #fff
+        border-radius: 10px
+    input
+        width: 0
+        height: 0
+        overflow: hidden
+        opacity: 0
+        visibility: hidden
+        margin: 0
+        padding: 0
+        position: absolute
+        top: 0
+        left: 0
+.tg span
+    background-color: #26a6e6
+.vk span
+    background-color: #0077fe
+@media(max-width: 575px)
+    .overlay
+        align-items: flex-start
+        padding-top: 120px
+    .popup
+        &-call
+            padding: 30px 10px
+        &__title
+            padding: 0 15px
