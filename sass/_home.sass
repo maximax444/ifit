@@ -253,6 +253,18 @@
             right: 70px
             top: 56px
             z-index: -1
+        &::before
+            content: ""
+            display: block
+            width: 600px
+            height: 600px
+            background: url('../img/autor-blue.png') center no-repeat
+            background-size: contain
+            position: absolute
+            left: -70px
+            transform: rotateY(180deg)
+            bottom: -206px
+            z-index: -1
     &__title
         margin: 0
         font-size: 50px
@@ -370,3 +382,225 @@
         &:hover
             path
                 fill: #0080ea
+@media(max-width: 1329px)
+    .titles
+        &::after
+            width: calc(100% - 10px)
+    .features
+        &::after
+            width: calc(100% - 10px)
+        &__wrap
+            margin: 0
+    .reviews
+        &__wrap
+            margin: 0
+    .free
+        &__wrap
+            margin: 0
+@media (max-width: 1129px)
+    .reviews
+        .container
+            padding-right: 20px
+        &__title
+            font-size: 40px
+    .features
+        &__wrap
+            flex-wrap: wrap
+        &__block
+            width: 48%
+            max-width: 48%
+            margin-bottom: 20px
+    .titles
+        &::after
+            width: calc(100% - 0px)
+            border-radius: 0
+    .features
+        &::after
+            width: calc(100% - 0px)
+            border-radius: 0
+@media (max-width: 991px)
+    .who
+        &__wrap
+            display: block
+        &__block
+            margin-bottom: 30px
+    .titles
+        padding: 40px 0
+        &__wrap
+            grid-gap: 30px 60px
+    .about
+        padding: 80px 0
+        &__wrap
+            display: block
+        &__img
+            width: 80%
+            margin: 0 auto
+            margin-bottom: 80px
+        &__cont
+            width: 100%
+    .reviews
+        &__wrap
+            display: block
+@media (max-width: 767px)
+    .titles
+        &__wrap
+            grid-template-columns: repeat(1, 1fr)
+    .reviews
+        &__block
+            max-width: 350px
+@media (max-width: 575px)
+    .who
+        padding-bottom: 44px
+        &__title
+            margin-bottom: 75px
+            font-size: 28px
+            line-height: normal
+            text-align: center
+        &__block
+            margin-top: 70px
+            margin-bottom: 0
+            margin-left: 0
+            padding: 40px
+            padding-top: 70px
+            font-size: 14px
+        &__img
+            width: 100px
+            height: 100px
+            top: -50px
+            left: 50%
+            margin-left: -50px
+            img
+                max-width: 100%
+                max-height: 100%
+    .titles
+        padding-top: 50px
+        padding-bottom: 20px
+        &__wrap
+            grid-gap: 0
+        &__block
+            margin-bottom: 30px
+        &__text
+            font-size: 14px
+        &__title
+            text-align: center
+            font-size: 28px
+            line-height: normal
+    .free
+        padding: 60px 0
+        &__wrap
+            padding: 30px 20px
+            display: block
+        &__text
+            font-size: 17px
+            line-height: 21px
+            text-align: center
+            margin-bottom: 40px
+            span
+                font-size: 28px
+                line-height: normal
+                margin-bottom: 30px
+        &__btn
+            width: 100%
+    .features
+        padding: 50px 0
+        &__title
+            margin-bottom: 40px
+            font-size: 28px
+            text-align: center
+            line-height: normal
+        &__wrap
+            display: block
+        &__block
+            width: 100%
+            max-width: 100%
+            padding: 30px
+        &__img
+            margin-bottom: 20px
+        &__name
+            margin-bottom: 10px
+            font-size: 17px
+            min-height: 0
+        &__text
+            font-size: 15px
+            line-height: normal
+    .about
+        padding-top: 50px
+        padding-bottom: 20px
+        &__wrap
+            position: relative
+        &__img
+            position: absolute
+            top: 60px
+            width: 290px
+            left: 50%
+            margin-left: -145px
+            .after
+                right: 40px
+                width: 100%
+                background-size: contain
+        &__title
+            margin-bottom: 350px
+            padding-left: 0
+            font-size: 28px
+            line-height: normal
+            text-align: center
+        &__list
+            li
+                font-size: 14px
+                margin-bottom: 30px
+                line-height: normal
+    .reviews
+        padding-bottom: 55px
+        &__wrap
+            padding: 30px 10px
+            padding-bottom: 115px
+        &__title
+            margin-bottom: 30px
+            text-align: center
+            line-height: normal
+            font-size: 24px
+        &__subtitle
+            margin-bottom: 35px
+            text-align: center
+            line-height: normal
+            font-size: 24px
+        &__slider
+            width: 100%
+            .slick-track
+                padding-left: 0
+                padding-top: 70px
+        &__img
+            top: -70px
+            margin-top: 0
+            left: 50%
+            margin-left: -52px
+        &__block
+            padding: 15px
+            padding-top: 80px
+            text-align: center
+            height: auto
+            margin: 0
+        &__link
+            font-size: 14px
+        &__text
+            font-size: 14px
+            span
+                line-height: normal
+                margin-bottom: 8px
+        &__arrows
+            bottom: 50px
+            width: 86px
+            right: 50%
+            margin-right: -43px
+            flex-direction: row
+            justify-content: space-between
+            align-items: center
+            height: auto
+            padding: 0
+        &__prev, &__next
+            max-width: 42%
+    .about
+        &__img
+            &::before
+                width: 100%
+                bottom: -240px
