@@ -1,5 +1,5 @@
 $("body").on('click', '[href*="#"]', function (e) {
-    var fixed_offset = 50;
+    var fixed_offset = 0;
     $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - fixed_offset }, 1000);
     e.preventDefault();
 });
@@ -44,6 +44,11 @@ $('.modal-call').on('click', function (e) {
     $('.overlay-call').addClass('overlay-active');
     $('body').css("overflow", "hidden");
 });
+$('.modal-polit').on('click', function (e) {
+    e.preventDefault();
+    $('.overlay-polit').addClass('overlay-active');
+    $('body').css("overflow", "hidden");
+});
 $('.popup-close').on('click', function (e) {
     $('body').css("overflow", "visible");
     $(this).closest('.overlay').removeClass('overlay-active');
@@ -54,6 +59,12 @@ $('.overlay-call').on('click', function (e) {
         $('.overlay-call').removeClass('overlay-active');
     }
 });
+$('.overlay-polit').on('click', function (e) {
+    if (!(($(e.target).parents('.popup-wrap').length) || ($(e.target).hasClass('popup-wrap')))) {
+        $('body').css("overflow", "visible");
+        $('.overlay-polit').removeClass('overlay-active');
+    }
+});
 
 function changeActive() {
     var activeBl = $('.popup__block.active');
@@ -62,10 +73,13 @@ function changeActive() {
 }
 $("form.step1").submit(function (r) {
     r.preventDefault();
-    $("form.step2").find('input[name="name"]').val($("form.step1").find('input[name="name"]').val());
-    $("form.step2").find('input[name="tel"]').val($("form.step1").find('input[name="tel"]').val());
-    $("form.step2").find('input[name="email"]').val($("form.step1").find('input[name="email"]').val());
-    changeActive();
+    if (!$('.input-name').hasClass('no')) {
+        $("form.step2").find('input[name="name"]').val($("form.step1").find('input[name="name"]').val());
+        $("form.step2").find('input[name="tel"]').val($("form.step1").find('input[name="tel"]').val());
+        $("form.step2").find('input[name="email"]').val($("form.step1").find('input[name="email"]').val());
+        changeActive();
+    }
+
 });
 $("form.step2 input[type='radio']").on('change', function () {
     $("form.step2").submit();
@@ -101,4 +115,14 @@ function maskPhone() {
 maskPhone();
 $('#country').change(function () {
     maskPhone();
+});
+
+$('.input-name').on('input', function () {
+    if (/^[а-яА-Яa-zA-ZЁёәіңғүұқөһӘІҢҒҮҰҚӨҺ\-\s\—]+$/.test($(this).val()) & $(this).val().length > 3) {
+        $(this).css('border', 'none');
+        $(this).removeClass('no');
+    } else {
+        $(this).css('border', '1px solid red');
+        $(this).addClass('no');
+    }
 });
